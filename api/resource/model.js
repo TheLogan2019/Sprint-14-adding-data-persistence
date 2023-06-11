@@ -1,7 +1,9 @@
 const db = require("../../data/dbConfig");
 
 async function getResourceById(resource_id) {
-  const resource = await db("resource").where(resource_id).first();
+  const resource = await db("resources")
+    .where("resource_id", resource_id)
+    .first();
   return resource;
 }
 
