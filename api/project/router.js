@@ -18,8 +18,8 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.use((err, res, req, next) => {
-  //eslint-disable-line
+//prettier-ignore
+router.use((err, res, req, next) => {//eslint-disable-line
   res.status(500).json({
     customMessage: "something went wrong!",
     message: err.message,
