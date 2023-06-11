@@ -9,13 +9,15 @@ async function getProjectById(project_id) {
 async function getAllProjects() {
   const projects = await db("projects");
 
-  return projects.map((project) => {
+  const projectTest = projects.map((project) => {
     if (project.project_completed === 1) {
       return { ...project, project_completed: true };
     } else {
       return { ...project, project_completed: false };
     }
   });
+
+  return projectTest;
 }
 
 async function createNewProject(project) {
